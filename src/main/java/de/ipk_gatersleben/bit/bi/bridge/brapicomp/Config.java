@@ -17,7 +17,11 @@ public class Config {
         try {
             input = Config.class.getResourceAsStream("/config.properties");
             prop.load(input);
+        } catch (NullPointerException e) {
+            System.err.println("No /config.properties found on CLASSPATH.");
+            e.printStackTrace();
         } catch (IOException e) {
+            System.err.println("Invalid format in /config.properties");
             e.printStackTrace();
         } finally {
             if (input != null) {

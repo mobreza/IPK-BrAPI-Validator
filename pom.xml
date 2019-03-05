@@ -84,6 +84,9 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.3.24.v20180605</version>
 				<configuration>
+					<httpConnector>
+						<port>8082</port>
+					</httpConnector>
 					<scanIntervalSeconds>1</scanIntervalSeconds>
 					<scanTargetPatterns>
 						<scanTargetPattern>
@@ -197,11 +200,6 @@
 			<version>5.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.oracle.jdbc</groupId>
-			<artifactId>ojdbc7</artifactId>
-			<version>12.1.0.1</version>
-		</dependency>
-		<dependency>
 			<groupId>com.github.fge</groupId>
 			<artifactId>json-schema-validator</artifactId>
 			<version>2.2.6</version>
@@ -237,6 +235,12 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.12</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>
